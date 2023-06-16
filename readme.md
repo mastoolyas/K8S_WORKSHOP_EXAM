@@ -1,6 +1,6 @@
 # K8S_WORKSHOP_EXAM
 
-## 1: for k8s exam:
+## 1: For k8s exam:
  see yaml files for q1-q16 with the file associated 
 
 ## 2: Pod Design Questions:
