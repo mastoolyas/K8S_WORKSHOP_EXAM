@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-pod-yaron
+  name: nginx-pod-yaron
+spec:
+  containers:
+  - image: nginx:alpine
+    name: nginx-pod-yaron
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

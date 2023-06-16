@@ -1,0 +1,4 @@
+deployment.apps/nginx-deploy 
+REVISION  CHANGE-CAUSE
+1         kubectl set image deployment/nginx-deploy nginx-deploy=nginx:1.17 --record=true
+
