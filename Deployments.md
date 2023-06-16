@@ -17,32 +17,32 @@ deployment "webapp" successfully rolled out
 ## 6. Create a deployment of webapp with image nginx:1.17.1 with container port 80 and verify the image version
 `kubectl create deploy webapp --image=nginx:1.17.1 --dry-run=client -o yaml > webapp.yaml`
 ### b. add the port section (80) and create the deployment
-`apiVersion: apps/v1\
-kind: Deployment\
-metadata:\
-  creationTimestamp: null\
-  labels:\
-    app: webapp\
-  name: webapp\
-spec:\
-  replicas: 1\
-  selector:\
-    matchLabels:\
-      app: webapp\
-  strategy: {}\
-  template:\
-    metadata:\
-      creationTimestamp: null\
-      labels:\
-        app: webapp\
-    spec:\
-      containers:\
-      - image: nginx:1.17.1\
-        name: nginx\
-        ports:\
-        - containerPort: 80\
-        resources: {}\
-status: {}`
+`apiVersion: apps/v1  
+kind: Deployment  
+metadata:  
+  creationTimestamp: null  
+  labels:
+    app: webapp  
+  name: webapp  
+spec:  
+  replicas: 1  
+  selector:
+    matchLabels:  
+      app: webapp  
+  strategy: {}  
+  template:  
+    metadata:  
+      creationTimestamp: null  
+      labels:  
+        app: webapp 
+    spec:  
+      containers:  
+      - image: nginx:1.17.1  
+        name: nginx  
+        ports:  
+        - containerPort: 80  
+        resources: {}  
+status: {}`  
 `kubectl create -f webapp.yaml`
 ## 7. Update the deployment with the image version 1.17.4
 `kubectl set image deploy/webapp nginx=nginx:1.17.4`
